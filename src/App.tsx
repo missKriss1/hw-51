@@ -7,21 +7,32 @@ import {useState} from "react";
 const App = () => {
 
     const [number , setNumber]  = useState <number[]>(
-        [ 5, 11, 16, 23, 32]
+        [ 5, 11, 16, 23, 32],
     )
 
     const changeNewNumber = () =>{
-        const NewNumberRandon: number = Math.round(Math.random() * 36 ) + 4;
+        const newNumbers: number[] = [];
+
+        while (newNumbers.length <= 4){
+            const NewNumberRandon: number = Math.round(Math.random() * (36 -4 + 1)) + 4;
+            if(!newNumbers.includes(NewNumberRandon)){
+                newNumbers.push(NewNumberRandon);
+            }
+        }
 
 
-        setNumber([
+        setNumber(newNumbers);
 
-        ])
+        newNumbers.sort((a:number, b:number) =>
+            a - b
+        );
+        console.log(newNumbers);
+
     }
 
   return (
     <>
-        <button onClick={changeNewNumber} type="button">New number</button>
+        <button className="newNumber" onClick={changeNewNumber} type="button">New number</button>
         <Number number = {number[0]}/>
         <Number number = {number[1]}/>
         <Number number = {number[2]}/>

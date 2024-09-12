@@ -1,0 +1,18 @@
+.number{
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.newNumber{
+    padding: 10px 5px;
+    background: #cccccc;
+    color: black;
+}
+
+
